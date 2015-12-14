@@ -7,7 +7,7 @@ image = Image.open(sys.argv[1])
 
 # if specified, take in a width and height; otherwise create optimal aspect ratio
 if len(sys.argv) == 4:
-	size = int(sys.argv[3]), int(sys.argv[2])
+	size = (image.size[1] / image.size[0]) * int(sys.argv[3]), (image.size[0] / image.size[1]) * int(sys.argv[2])
 else:
 	size = (image.size[1] / image.size[0]) * 400, (image.size[0] / image.size[1]) * 900
 
